@@ -1,1 +1,8 @@
+# Byte-compiled / optimized / DLL files
+__pycache__
+
+# Ignore editor/project-specific junk
+*.swp
 .DS_Store
+.idea/
+.vscode/
