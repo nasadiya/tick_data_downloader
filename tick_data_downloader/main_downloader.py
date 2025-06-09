@@ -46,9 +46,9 @@ async def simulate_user_download(currency, target_date):
 
         # Wait for 'Save as .csv' to appear and click it
         await widget_frame.wait_for_selector("div.a-b-c.a-ab-v-y-x:has-text('Save as .csv')", timeout=30000)
-        async with page.expect_download() as download:
-            await page.click("text=Download")
-
+        async with page.expect_download() as download_info:
+            await widget_frame.click("div.a-b-c.a-ab-v-y-x:has-text('Save as .csv')")
+        download = await download_info.value
 
         # Save file to current directory
         download_path = os.path.join(os.getcwd(), download.suggested_filename)

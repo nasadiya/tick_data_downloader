@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='tick_sponge',
-    version='0.1.0',
+    version='0.1.1',
     description='Downloader for historical tick data',
     author='nasadiya',
     author_email='you@example.com',

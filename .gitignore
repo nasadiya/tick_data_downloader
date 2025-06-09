@@ -3,7 +3,8 @@ __pycache__
 .pytest_cache
 .coverage
 tick_data_downloader.egg-info
-
+tick_sponge.egg-info
+dist/
 # Ignore editor/project-specific junk
 *.swp
 .DS_Store
