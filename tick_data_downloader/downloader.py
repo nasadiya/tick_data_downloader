@@ -2,7 +2,7 @@
 
 import asyncio
 import pandas as pd
-from tick_data_downloader.src.main_downloader import simulate_user_download
+from tick_data_downloader.main_downloader import simulate_user_download
 
 
 def download_tick_data(currency:str, date:str):

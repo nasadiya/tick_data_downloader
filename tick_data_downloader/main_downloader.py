@@ -1,9 +1,9 @@
 import os
 import pandas as pd
 from playwright.async_api import async_playwright
-from tick_data_downloader.src.tz import set_timezone
-from tick_data_downloader.src.date_picker import select_date
-from tick_data_downloader.src.symbol_picker import symbol_select
+from tick_data_downloader.tz import set_timezone
+from tick_data_downloader.date_picker import select_date
+from tick_data_downloader.symbol_picker import symbol_select
 
 
 async def simulate_user_download(currency, target_date):
@@ -46,9 +46,9 @@ async def simulate_user_download(currency, target_date):
 
         # Wait for 'Save as .csv' to appear and click it
         await widget_frame.wait_for_selector("div.a-b-c.a-ab-v-y-x:has-text('Save as .csv')", timeout=30000)
-        async with page.expect_download() as download_info:
-            await widget_frame.click("div.a-b-c.a-ab-v-y-x:has-text('Save as .csv')")
-        download = await download_info.value
+        async with page.expect_download() as download:
+            await page.click("text=Download")
+
 
         # Save file to current directory
         download_path = os.path.join(os.getcwd(), download.suggested_filename)

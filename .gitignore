@@ -1,5 +1,8 @@
 # Byte-compiled / optimized / DLL files
 __pycache__
+.pytest_cache
+.coverage
+tick_data_downloader.egg-info
 
 # Ignore editor/project-specific junk
 *.swp
